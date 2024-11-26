@@ -12,6 +12,7 @@ data class MessageEntity(
     @SerializedName("url") val url: String? = null,
     @SerializedName("user") val user: User? = null,
     @SerializedName("language") val language: String? = null,
+    @SerializedName("custom_emoji_id") val customEmojiId: String? = null
 ) {
     enum class Type {
         @SerializedName("mention")
@@ -61,5 +62,8 @@ data class MessageEntity(
 
         @SerializedName("spoiler")
         SPOILER,
+
+        @SerializedName("custom_emoji")
+        CUSTOM_EMOJI
     }
 }

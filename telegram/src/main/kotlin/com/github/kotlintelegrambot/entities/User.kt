@@ -12,6 +12,7 @@ data class User(
     @SerializedName("last_name") val lastName: String? = null,
     @SerializedName("username") val username: String? = null,
     @SerializedName("language_code") val languageCode: String? = null,
+    @SerializedName("is_premium") val isPremium: Boolean = false,
     @SerializedName("can_join_groups") val canJoinGroups: Boolean? = null,
     @SerializedName("can_read_all_group_messages") val canReadAllGroupMessages: Boolean? = null,
     @SerializedName("supports_inline_queries") val supportsInlineQueries: Boolean? = null,
