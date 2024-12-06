@@ -1474,6 +1474,18 @@ internal class ApiClient(
         ).runApiOperation()
     }
 
+    fun setUserEmojiStatus(
+        userId: Long,
+        emojiStatusCustomEmojiId: String?,
+        emojiStatusExpirationDate: Long?
+    ): TelegramBotResult<Boolean> {
+        return service.setUserEmojiStatus(
+            userId = userId,
+            emojiStatusCustomEmojiId = emojiStatusCustomEmojiId,
+            emojiStatusExpirationDate = emojiStatusExpirationDate
+        ).runApiOperation()
+    }
+
     private fun <T : Any> Call<Response<T>>.runApiOperation(): TelegramBotResult<T> {
         val apiResponse = try {
             apiRequestSender.send(this)

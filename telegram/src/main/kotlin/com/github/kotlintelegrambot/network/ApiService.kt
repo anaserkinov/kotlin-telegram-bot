@@ -967,6 +967,14 @@ internal interface ApiService {
         @Field("reaction") reaction: String?,
         @Field("is_big") isBig: Boolean?,
     ): Call<Response<Boolean>>
+
+    @FormUrlEncoded
+    @POST("setUserEmojiStatus")
+    fun setUserEmojiStatus(
+        @Field("user_id") userId: Long,
+        @Field("emoji_status_custom_emoji_id") emojiStatusCustomEmojiId: String?,
+        @Field("emoji_status_expiration_date") emojiStatusExpirationDate: Long?
+    ): Call<Response<Boolean>>
 }
 
 class LabeledPriceList(private val labeledPrice: List<LabeledPrice>) {

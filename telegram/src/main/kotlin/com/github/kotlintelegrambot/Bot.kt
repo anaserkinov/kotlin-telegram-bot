@@ -2148,4 +2148,14 @@ class Bot private constructor(
         reaction = reaction,
         isBig = isBig,
     )
+
+    fun setUserEmojiStatus(
+        userId: Long,
+        emojiStatusCustomEmojiId: String?,
+        emojiStatusExpirationDate: Long?
+    ): TelegramBotResult<Boolean> = apiClient.setUserEmojiStatus(
+        userId = userId,
+        emojiStatusCustomEmojiId = emojiStatusCustomEmojiId,
+        emojiStatusExpirationDate = emojiStatusExpirationDate
+    )
 }
